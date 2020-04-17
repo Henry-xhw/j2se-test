@@ -19,7 +19,7 @@ public class ThreadSafeSample {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        com.active.henry.java.ThreadSafeSample sample = new com.active.henry.java.ThreadSafeSample();
+        ThreadSafeSample sample = new ThreadSafeSample();
         Thread threadA = new Thread("ThreadA"){
             public void run(){
                 sample.nonSafeAction();

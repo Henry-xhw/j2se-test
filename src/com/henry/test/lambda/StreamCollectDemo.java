@@ -7,8 +7,10 @@ import java.util.stream.Stream;
 public class StreamCollectDemo {
     public static void main(String[] args) {
         Stream<Integer> stream = Stream.of(1, 2, 3, 5, 7);
-        List<Integer> list = stream.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+//        List<Integer> list = stream.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        List<Integer> list = stream.collect(ArrayList::new, (al, a) -> al.add(a), (al, al2) -> al.addAll(al2));
         list.forEach(System.out::println);
+
     }
 
     private static void showCollect() {
