@@ -10,4 +10,12 @@ public class StreamCollectDemo {
         List<Integer> list = stream.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
         list.forEach(System.out::println);
     }
+
+    private static void showCollect() {
+        //　将Stream规约成List
+        Stream<String> stream = Stream.of("I", "love", "you", "too");
+        List<String> list = stream.collect(ArrayList::new, ArrayList::add, ArrayList::addAll);// 方式１
+        //List<String> list = stream.collect(Collectors.toList());// 方式2
+        System.out.println(list);
+    }
 }
