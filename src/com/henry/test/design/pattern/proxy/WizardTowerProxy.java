@@ -1,6 +1,5 @@
-package com.henry.test.proxy;
+package com.henry.test.design.pattern.proxy;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

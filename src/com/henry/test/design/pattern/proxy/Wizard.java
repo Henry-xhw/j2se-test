@@ -1,4 +1,4 @@
-package com.henry.test.proxy;
+package com.henry.test.design.pattern.proxy;
 
 import lombok.Data;
 import lombok.NonNull;
