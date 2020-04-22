@@ -1,4 +1,4 @@
-package com.henry.test.singleton;
+package com.henry.test.design.pattern.singleton;
 
 import java.io.File;
 import java.io.FileWriter;
