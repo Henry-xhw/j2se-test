@@ -1,5 +1,15 @@
 package com.henry.spring.ioc.overview.domain;
 
+import com.henry.spring.ioc.overview.annotation.Super;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
+import java.lang.annotation.Annotation;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     private Integer age;
     private String name;
@@ -23,4 +33,5 @@ public class User {
     @Override public String toString() {
         return "User{" + "hashcode: " + super.hashCode() + " age=" + age + ", name='" + name + '\'' + '}';
     }
+
 }

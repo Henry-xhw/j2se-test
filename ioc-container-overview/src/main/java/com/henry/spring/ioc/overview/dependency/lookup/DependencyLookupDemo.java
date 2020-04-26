@@ -14,13 +14,19 @@ public class DependencyLookupDemo {
         // 配置 XML 配置文件
         // 启动 Spring 应用上下文
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-lookup-context.xml");
+
+        System.out.println(beanFactory.getBean("user"));
+        System.out.println(beanFactory.getBean("abcde"));
+        System.out.println(beanFactory.getBean("abcde"));
+
+
         // 按照类型查找
         lookupByTye(beanFactory);
         // 按照类型查找集合对象
         lookupCollectionByType(beanFactory);
 
 //        lookupInRealTime(beanFactory);
-//        lookupInLazy(beanFactory);
+        lookupInLazy(beanFactory);
         // 通过注解查找对象
         lookupByAnnotationType(beanFactory);
     }

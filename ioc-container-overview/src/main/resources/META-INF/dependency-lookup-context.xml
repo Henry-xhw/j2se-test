@@ -3,17 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="user" class="com.henry.spring.ioc.overview.domain.User" primary="true">
+    <bean id="user" class="com.henry.spring.ioc.overview.domain.User" primary="false" scope="prototype">
         <property name="age" value="39" />
         <property name="name" value="henry" />
     </bean>
 
-    <bean name="superUser" class="com.henry.spring.ioc.overview.domain.SuperUser" parent="user" >
+    <alias name="user" alias="abcde" />
+
+    <bean name="superUser" class="com.henry.spring.ioc.overview.domain.SuperUser" primary="true" parent="user" >
         <property name="address" value="hang zhou" />
     </bean>
 
-    <bean name="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+    <!--<bean name="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user" />
-    </bean>
+    </bean>-->
 
 </beans>

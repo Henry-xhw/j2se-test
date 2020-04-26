@@ -6,15 +6,17 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     <import resource="dependency-lookup-context.xml"/>
-    <bean id="userRepository" class="com.henry.spring.ioc.overview.repository.UserRepository" autowire="byType">
+    <!-- 别名的方式，name属性以,或者;分隔-->
+    <bean name="userRepository;henry" class="com.henry.spring.ioc.overview.repository.UserRepository"
+          autowire="byType" scope="singleton" lazy-init="default">
         <!-- 手动配置 -->
-<!--        <property name="users">-->
-<!--            <util:list>-->
+        <!--<property name="users">
+            <util:list>
 
-<!--                <ref bean="superUser" />-->
-<!--                <ref bean="user" />-->
-<!--                <ref bean="superUser" />-->
-<!--            </util:list>-->
-<!--        </property>-->
+                <ref bean="superUser" />
+                <ref bean="user" />
+                <ref bean="superUser" />
+            </util:list>
+        </property>-->
     </bean>
 </beans>

@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ioc-container-overview/ioc-container-overview.iml" filepath="$PROJECT_DIR$/ioc-container-overview/ioc-container-overview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/j2se-test.iml" filepath="$PROJECT_DIR$/j2se-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-test.iml" filepath="$PROJECT_DIR$/java-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-bean/spring-bean.iml" filepath="$PROJECT_DIR$/spring-bean/spring-bean.iml" />
     </modules>
   </component>
 </project>

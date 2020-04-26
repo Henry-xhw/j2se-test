@@ -9,8 +9,9 @@ import java.util.Collection;
 
 public class UserRepository {
     private Collection<User> users;
+    // 内建 非bean 对象(依赖)
     private BeanFactory beanFactory;
-    private ObjectFactory<ApplicationContext> objectFactory;
+    private ObjectFactory<User> objectFactory;
 
     @Override public String toString() {
         return "UserRepository{" + "users=" + users + '}';
@@ -32,11 +33,11 @@ public class UserRepository {
         this.beanFactory = beanFactory;
     }
 
-    public ObjectFactory<ApplicationContext> getObjectFactory() {
+    public ObjectFactory<User> getObjectFactory() {
         return objectFactory;
     }
 
-    public void setObjectFactory(ObjectFactory<ApplicationContext> objectFactory) {
+    public void setObjectFactory(ObjectFactory<User> objectFactory) {
         this.objectFactory = objectFactory;
     }
 }

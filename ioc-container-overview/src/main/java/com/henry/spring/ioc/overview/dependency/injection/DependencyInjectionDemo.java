@@ -19,16 +19,19 @@ public class DependencyInjectionDemo {
 //        BeanFactory applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
         // 依赖来源一: 自定义bean
+
+        UserRepository up2 = applicationContext.getBean("henry", UserRepository.class);
         UserRepository up = applicationContext.getBean("userRepository", UserRepository.class);
+        System.out.println(up == up2);
 //        System.out.println(up);
 //        System.out.println(up.getUsers());
 //        System.out.println(applicationContext);
         // 依赖来源二: 内建依赖
-        System.out.println(up.getBeanFactory());
-        System.out.println(applicationContext);
-        System.out.println(up.getBeanFactory() == applicationContext);
-        System.out.println(up.getBeanFactory().getBean("user"));
-        System.out.println(applicationContext.getBean("user"));
+//        System.out.println(up.getBeanFactory());
+//        System.out.println(applicationContext);
+//        System.out.println(up.getBeanFactory() == applicationContext);
+//        System.out.println(up.getBeanFactory().getBean("user"));
+//        System.out.println(applicationContext.getBean("user"));
 //        System.out.println(applicationContext.getBean(BeanFactory.class));
 //        System.out.println(up.getObjectFactory());
 //        System.out.println(up.getObjectFactory().getObject());
