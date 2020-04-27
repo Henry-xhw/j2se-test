@@ -3,7 +3,10 @@ package com.henry.test.java.basic.jcf.generics;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+// can create type parameter E in class level
+//public class GenericDemo<E> {
 public class GenericDemo {
+
     public static void main(String[] args) {
         showGeneric();
     }
@@ -15,7 +18,7 @@ public class GenericDemo {
         list.add(new String("Tuesday"));
         list.add(new String("Wensday"));
         for(int i = 0; i < list.size(); i++){
-            String weekday = (String)list.get(i);//显式类型转换
+            String weekday = (String) list.get(i);//显式类型转换
             System.out.println(weekday.toUpperCase());
         }
     }
@@ -55,4 +58,16 @@ public class GenericDemo {
             System.out.println(weekday.toUpperCase());
         }
 
-    }}
+    }
+
+    private <E> E get(Object[] objs, int index) {
+        Object[] objects = objs;
+        return (E) objects[index];
+    }
+
+    private <E> E get2(Object[] objs, int index) {
+        Object[] objects = objs;
+        return (E) objects[index];
+    }
+
+}

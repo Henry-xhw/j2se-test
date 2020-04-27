@@ -23,8 +23,8 @@ public class JCFAndLambda {
     public static void main(String[] args) {
 
 //        showForeach();
-//        removeIf();
-        showReplaceAll();
+        removeIf();
+//        showReplaceAll();
 //        showStream();
     }
 
@@ -87,7 +87,7 @@ public class JCFAndLambda {
 //                it.remove();
 //        }
 
-        List<String> list = new ArrayList<>(Arrays.asList("I", "love", "you", "too"));
+        /*List<String> list = new ArrayList<>(Arrays.asList("I", "love", "you", "too"));
         Iterator<String> it = list.iterator();
         while (it.hasNext()) {
             if (it.next().length() > 3) {
@@ -95,10 +95,11 @@ public class JCFAndLambda {
             }
         }
         list.forEach(System.out::println);
-        System.out.println("------------------------------");
+        System.out.println("------------------------------");*/
 
         //Exception in thread "main" java.util.ConcurrentModificationException
         /*List<String> list5 = new ArrayList<>(Arrays.asList("I", "love", "you", "too"));
+        //forEach里做remove, 会抛出ConcurrentModificationException
         list5.forEach(str -> {
             if (str.length() > 3) {
                 list5.remove(str);
@@ -108,7 +109,7 @@ public class JCFAndLambda {
         System.out.println("------------------------------");*/
 
         // 使用removeIf()结合匿名名内部类实现
-        ArrayList<String> list2 = new ArrayList<>(Arrays.asList("I", "love", "you", "too"));
+        /*ArrayList<String> list2 = new ArrayList<>(Arrays.asList("I", "love", "you", "too"));
         list2.removeIf(new Predicate<String>(){ // 删除长度大于3的元素
             @Override
             public boolean test(String str){
@@ -116,11 +117,11 @@ public class JCFAndLambda {
             }
         });
         list2.forEach(System.out::println);
-        System.out.println("------------------------------");
+        System.out.println("------------------------------");*/
 
         // 使用removeIf()结合Lambda表达式实现
         ArrayList<String> list3 = new ArrayList<>(Arrays.asList("I", "love", "you", "too"));
-        list3.removeIf(str -> str.length() > 3); // 删除长度大于3的元素
+        list3.removeIf(str -> str.length() > 3); // 删除长度大于3的元素, removeIf删除元素是安全的
         list3.forEach(System.out::println);
 
     }

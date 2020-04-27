@@ -1,6 +1,8 @@
 package com.henry.test.java.basic.anonymous;
 
 public class AnonymousInternalClassDemo2 {
+
+    private transient Object[] elements;
     {
         Thread thread = new Thread(new Runnable() {
             @Override public void run() {
@@ -38,6 +40,7 @@ public class AnonymousInternalClassDemo2 {
         new Runnable() {
 
             @Override public void run() {
+
                 System.out.println(this);
             }
         }.run();
@@ -47,5 +50,11 @@ public class AnonymousInternalClassDemo2 {
         AnonymousInternalClassDemo2 demo2 = new AnonymousInternalClassDemo2();
         System.out.println(demo2);
         demo2.instanceMethod();
+    }
+
+    private class Test {
+        private void println() {
+            System.out.println(elements.length);
+        }
     }
 }
