@@ -8,7 +8,7 @@
     <import resource="dependency-lookup-context.xml"/>
     <!-- 别名的方式，name属性以,或者;分隔-->
     <bean name="userRepository;henry" class="com.henry.spring.ioc.overview.repository.UserRepository"
-          autowire="byType" scope="singleton" lazy-init="default">
+          autowire="byType" scope="prototype" lazy-init="default">
         <!-- 手动配置 -->
         <!--<property name="users">
             <util:list>

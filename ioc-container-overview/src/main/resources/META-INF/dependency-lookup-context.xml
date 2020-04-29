@@ -10,7 +10,7 @@
 
     <alias name="user" alias="abcde" />
 
-    <bean name="superUser" class="com.henry.spring.ioc.overview.domain.SuperUser" primary="true" parent="user" >
+    <bean name="superUser" class="com.henry.spring.ioc.overview.domain.SuperUser" primary="true" parent="user" scope="prototype">
         <property name="address" value="hang zhou" />
     </bean>
 
