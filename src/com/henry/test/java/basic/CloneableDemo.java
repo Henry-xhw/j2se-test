@@ -11,7 +11,8 @@ public class CloneableDemo {
         data.setDesc(desc);
 
         Data copy = data.clone();
-
+        System.out.println("data: " + data);
+        System.out.println("copy: " + copy);
         System.out.println("data == copy " + (data == copy));
 
         System.out.println(copy.hashCode() == data.hashCode());
@@ -59,4 +60,8 @@ class Data implements Cloneable {
     //    public int hashCode() {
     //        return value;
     //    }
+
+    @Override public String toString() {
+        return "Data{" + "value=" + value + ", desc='" + desc + '\'' + ", desc.hashCode: " + desc.hashCode() + ", object.hashCode: " + this.hashCode() + '}';
+    }
 }
